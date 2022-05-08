@@ -1,8 +1,8 @@
 package poo.aula23.geometria
 
-class Retangulo(override var b: Double, override var h: Double) :FiguraGeometrica {
-    fun receberMedidas(){
+class Retangulo(override var b: Double, override var h: Double) : FiguraGeometrica {
+    override fun calcularMedidas(){
         val resultado =  b * h
-        println("A area do ret‚ngulo È $resultado.")
+        println("A area do ret√¢ngulo √© $resultado.")
     }
 }
