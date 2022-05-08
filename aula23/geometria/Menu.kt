@@ -7,14 +7,14 @@ class Menu {
     fun menu() {
         print(
             "\n-------------------------------------------------------\n             Calcular figuras geometricas" +
-            "\n-------------------------------------------------------\n\nInsira a referência de como deseja " +
+            "\n-------------------------------------------------------\n\nInsira a referÃªncia de como deseja " +
             "prosseguir:\n\nQuadrado (q)  Retangulo (r)  Losango (l)  Triangulo (t)  Sair (s)   ->  ")
         val opcao = readln()
         if (opcao == "s") {
-            println("\nFechando, até mais ....")
+            println("\nFechando, atÃ© mais ....")
             exitProcess(0)
         } else if(opcao != "q" && opcao != "r" && opcao != "l" && opcao != "t"){
-            println("\nCarregando ... \nNão consegui reconhecer esse valor. Tente novamente.")
+            println("\nCarregando ... \nNÃ£o consegui reconhecer esse valor. Tente novamente.")
             menu()
         }else {
             print("\nInsira a primeira medida: ")
@@ -23,19 +23,19 @@ class Menu {
             val h = readln().toDouble()
             when (opcao) {
                 "q" -> {
-                    val calcularQuadrado = Quadrado(b, h).receberMedidas()
+                    val calcularQuadrado = Quadrado(b, h).calcularMedidas()
                     menu()
                 }
                 "r" -> {
-                    val calcularRetangulo = Retangulo(b, h).receberMedidas()
+                    val calcularRetangulo = Retangulo(b, h).calcularMedidas()
                     menu()
                 }
                 "l" -> {
-                    val calcularLosango = Losango(b, h).receberMedidas()
+                    val calcularLosango = Losango(b, h).calcularMedidas()
                     menu()
                 }
                 "t" -> {
-                    val calcularTriangulo = Triangulo(b, h).receberMedidas()
+                    val calcularTriangulo = Triangulo(b, h).calcularMedidas()
                     menu()}
             }
         }
