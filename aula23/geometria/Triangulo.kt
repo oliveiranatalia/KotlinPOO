@@ -1,8 +1,8 @@
 package poo.aula23.geometria
 
-class Triangulo(override var b: Double, override var h: Double) :FiguraGeometrica{
-    fun receberMedidas(){
+class Triangulo(override var b: Double, override var h: Double) : FiguraGeometrica {
+    override fun calcularMedidas(){
         val resultado =  b * h / 2
-        println("A area do tri‚ngulo È $resultado.")
+        println("A area do tri√¢ngulo √© $resultado.")
     }
 }
