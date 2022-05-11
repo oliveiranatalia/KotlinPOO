@@ -1,5 +1,6 @@
 package poo.aula25.divisao
 
 fun main(){
-    val iniciar = CalculoMatematico().divisao()
+    println("----- divisão -----")
+    val iniciar = CalculoMatematico().divisao(4,0)
 }
