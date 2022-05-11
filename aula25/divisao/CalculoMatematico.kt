@@ -1,19 +1,14 @@
 package poo.aula25.divisao
 
 class CalculoMatematico {
-    fun divisao():Int{
-        try {
-            val calcular = CalculoMatematico()
-            print("Insira um número inteiro: ")
-            val valor1 = readln().toInt()
-            print("Insira um número inteiro: ")
-            val valor2 = readln().toInt()
-            val resultado = valor1 / valor2
-            print("O resultado da operação é $resultado")
-            return resultado
-        }catch(exception: ArithmeticException){
-            print("Operação não pode ser realizada")
-            return 0
+    fun divisao(valor1: Int, valor2: Int): Int{
+        return try{
+            val resultado = valor1/valor2
+            print("Para dividendo $valor1 e divisor $valor2, o resultado é $resultado")
+            resultado
+        }catch (e:ArithmeticException){
+            print("Para dividendo $valor1 e divisor $valor2, a operação não pode ser realizada")
+            0
         }
     }
 }
