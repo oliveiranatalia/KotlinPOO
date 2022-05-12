@@ -4,6 +4,5 @@ fun main(){
     println("\n-------------------------------------------------------" +
         "\n                Lista de compras" +
         "\n-------------------------------------------------------")
-    val carrinho = Carrinho()
-    Menu().menuPrincipal(carrinho)
+    Menu().menuPrincipal()
 }
