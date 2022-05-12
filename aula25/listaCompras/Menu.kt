@@ -3,17 +3,17 @@ package poo.aula25.listaCompras
 import kotlin.system.exitProcess
 
 class Menu {
-    fun menuPrincipal(){
+    fun menu(carrinho:Carrinho){
         try{
             print("\nInsira a referência de como deseja prosseguir:\n\n" +
                     "--Inserir produto no carrinho (i)\n" +
                     "----------Visualizar carrinho (v)\n" +
                     "---------------------Encerrar (e)\n ->  ")
             when (readln()) {
-                "i" -> {val i = Carrinho().inserirCarrinho()
-                    menuPrincipal()}
-                "v" -> {val v = Carrinho().exibirCarrinho()
-                    menuPrincipal()}
+                "i" -> {val i = carrinho.inserirCarrinho()
+                    menu(carrinho)}
+                "v" -> {val v = carrinho.exibirCarrinho()
+                    menu(carrinho)}
                 "e" -> {println("\nFechando, até mais ....")
                     exitProcess(0)}
                 else -> {throw IllegalArgumentException ("Valor inválido")
@@ -21,7 +21,7 @@ class Menu {
             }
         }catch(e:Exception){
             print(e.message)
-            menuPrincipal()
+            menu(carrinho)
         }
     }
 }
