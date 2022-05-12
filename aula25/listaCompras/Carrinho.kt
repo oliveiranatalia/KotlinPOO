@@ -6,24 +6,24 @@ const val GRAMAS = "Insira a quantidade em gramas (0.500) : "
 const val UNIDADES = "Insira a quantidade em unidades (5) : "
 
 class Carrinho{
-    val listaVerdura:ArrayList<Verdura> = ArrayList()
-    val listaGrao: ArrayList<Graos> = ArrayList()
-    val listaLegume: ArrayList<Legume> = ArrayList()
-    val listaOutros: ArrayList<Outros> = ArrayList()
+    val listaVerdura = ArrayList<Verdura>()
+    val listaGrao = ArrayList<Graos>()
+    val listaLegume = ArrayList<Legume>()
+    val listaOutros = ArrayList<Outros>()
     var totalLegume = 0.0
     var totalOutro = 0.0
 
     fun inserirCarrinho(){
         try{
             print("\nInsira o tipo de produto que deseja inserir:\n(v) verduras - " +
-                    "(g) gr„os - (l) legumes - (o) outros ->")
+                    "(g) gr√£os - (l) legumes - (o) outros ->")
             when(readln()){
                 "v" ->inserirVerdura()
                 "g" ->inserirGrao()
                 "l" ->inserirLegume()
                 "o" ->inserirOutro()
                 else-> {
-                    throw IllegalArgumentException("Tipo de alimento inv·lido")}
+                    throw IllegalArgumentException("Tipo de alimento inv√°lido")}
             }
         }catch(e:Exception){
             println(e.message)
@@ -32,26 +32,26 @@ class Carrinho{
     }
     fun exibirCarrinho() {
         if (listaVerdura.isNotEmpty()){println("${this.listaVerdura.toString()}\nA quantidade " +
-                "de alimentos do tipo verdura a ser comprada È ${listaVerdura.size}")}
+                "de alimentos do tipo verdura a ser comprada √© ${listaVerdura.size}")}
         if (listaGrao.isNotEmpty()) {println("${this.listaGrao.toString()}\nA quantidade de alimentos " +
-                "do tipo gr„o a ser comprada È  ${listaGrao.size}")}
+                "do tipo gr√£o a ser comprada √©  ${listaGrao.size}")}
         if (listaLegume.isNotEmpty()) {println("${this.listaLegume.toString()}\nA quantidade de alimentos " +
-                "do tipo legumes a ser comprada È  $totalLegume")}
+                "do tipo legumes a ser comprada √©  $totalLegume")}
         if (listaOutros.isNotEmpty()) {println("${this.listaOutros.toString()}\nA quantidade de alimentos" +
-                " de outros tipos a ser comprada È $totalOutro")}
+                " de outros tipos a ser comprada √© $totalOutro")}
     }
     fun inserirVerdura(){
         try {
             print(GRAMAS)
             val gramas = readln().toDouble()
             if(gramas <= 0.0){
-                println("N„o È aceito valores menores ou igual a zero")
+                println("N√£o √© aceito valores menores ou igual a zero")
                 inserirVerdura()
             }else {
                 print(NOME)
                 val nome = readln()
                 if (nome.isEmpty()) {
-                    throw UnsupportedOperationException("N„o È permitido inserir valor vazio")
+                    throw UnsupportedOperationException("N√£o √© permitido inserir valor vazio")
                 } else {
                     val verdura = Verdura(gramas, nome)
                     listaVerdura.add(verdura)
@@ -70,13 +70,13 @@ class Carrinho{
             print(GRAMAS)
             val gramas = readln().toDouble()
             if(gramas <= 0.0){
-                println("N„o È aceito valores menores ou igual a zero")
+                println("N√£o √© aceito valores menores ou igual a zero")
                 inserirGrao()
             }else {
                 print(NOME)
                 val nome = readln()
                 if (nome.isEmpty()) {
-                    throw UnsupportedOperationException("N„o È permitido inserir valor vazio")
+                    throw UnsupportedOperationException("N√£o √© permitido inserir valor vazio")
                 } else {
                     val grao = Graos(nome, gramas)
                     listaGrao.add(grao)
@@ -84,7 +84,7 @@ class Carrinho{
                 }
             }
         }catch (e:NumberFormatException){
-            println("Para gr„os, a quantidade deve ser informada com ponto")
+            println("Para gr√£os, a quantidade deve ser informada com ponto")
             inserirGrao()
         }catch (e:UnsupportedOperationException){
             println(e.message)
@@ -95,13 +95,13 @@ class Carrinho{
             print(UNIDADES)
             val unidade = readln().toInt()
             if(unidade <= 0){
-                println("N„o È aceito valores menores ou igual a zero")
+                println("N√£o √© aceito valores menores ou igual a zero")
                 inserirLegume()
             }else {
                 print(NOME)
                 val nome = readln()
                 if (nome.isEmpty()) {
-                    throw UnsupportedOperationException("N„o È permitido inserir valor vazio")
+                    throw UnsupportedOperationException("N√£o √© permitido inserir valor vazio")
                 } else {
                     val legume = Legume(nome, unidade)
                     listaLegume.add(legume)
@@ -121,13 +121,13 @@ class Carrinho{
             print(UNIDADES)
             val unidade = readln().toInt()
             if(unidade <= 0){
-                println("N„o È aceito valores menores ou igual a zero")
+                println("N√£o √© aceito valores menores ou igual a zero")
                 inserirOutro()
             }else {
                 print(NOME)
                 val nome = readln()
                 if (nome.isEmpty()) {
-                    throw UnsupportedOperationException("N„o È permitido inserir valor vazio")
+                    throw UnsupportedOperationException("N√£o √© permitido inserir valor vazio")
                 } else {
                     val outro = Outros(nome, unidade)
                     listaOutros.add(outro)
